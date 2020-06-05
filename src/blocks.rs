@@ -1,3 +1,4 @@
+pub mod activity;
 pub mod backlight;
 pub mod battery;
 pub mod bluetooth;
@@ -34,6 +35,7 @@ pub mod watson;
 pub mod weather;
 pub mod xrandr;
 
+use self::activity::*;
 use self::backlight::*;
 use self::battery::*;
 use self::bluetooth::*;
@@ -149,6 +151,7 @@ pub fn create_block(
 ) -> Result<Box<dyn Block>> {
     match name {
         // Please keep these in alphabetical order.
+        "activity" => block!(Activity, block_config, config, update_request),
         "backlight" => block!(Backlight, block_config, config, update_request),
         "battery" => block!(Battery, block_config, config, update_request),
         "bluetooth" => block!(Bluetooth, block_config, config, update_request),
