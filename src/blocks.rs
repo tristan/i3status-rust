@@ -9,6 +9,7 @@ pub mod disk_space;
 pub mod docker;
 pub mod focused_window;
 pub mod github;
+pub mod gmailcount;
 pub mod ibus;
 pub mod kdeconnect;
 pub mod keyboard_layout;
@@ -46,6 +47,7 @@ use self::disk_space::*;
 use self::docker::*;
 use self::focused_window::*;
 use self::github::*;
+use self::gmailcount::*;
 use self::ibus::*;
 use self::kdeconnect::*;
 use self::keyboard_layout::*;
@@ -162,6 +164,7 @@ pub fn create_block(
         "docker" => block!(Docker, block_config, config, update_request),
         "focused_window" => block!(FocusedWindow, block_config, config, update_request),
         "github" => block!(Github, block_config, config, update_request),
+        "gmailcount" => block!(GmailCount, block_config, config, update_request),
         "ibus" => block!(IBus, block_config, config, update_request),
         "kdeconnect" => block!(KDEConnect, block_config, config, update_request),
         "keyboard_layout" => block!(KeyboardLayout, block_config, config, update_request),
